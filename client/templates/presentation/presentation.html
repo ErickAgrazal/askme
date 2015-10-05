@@ -1,0 +1,19 @@
+<template name="presentation">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        {{#if equals page 1 }}{{#markdown}}{{> mkd1 }}{{/markdown}} {{/if}}
+        {{#if equals page 2 }}{{#markdown}}{{> mkd2 }}{{/markdown}} {{/if}}
+        {{#if equals page 3 }}{{#markdown}}{{> mkd3 }}{{/markdown}} {{/if}}
+        {{#if equals page 4 }}{{#markdown}}{{> mkd4 }}{{/markdown}} {{/if}}
+        {{#if equals page 5 }}{{#markdown}}{{> mkd5 }}{{/markdown}} {{/if}}
+
+        Página: {{page}}
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <button class="btn btn-primary previous {{#if firstPage }}disabled {{/if}}">Anterior</button>
+        <button class="btn btn-primary next {{#if lastPage }}disabled {{/if}}">Siguiente</button>
+      </div>
+    </div>
+</template>
