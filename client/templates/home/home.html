@@ -2,14 +2,36 @@
   <div class="col-lg-12">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h1>Ask me!</h1>
+        <h1>¡Pregúntame!</h1>
         <p>
-          Si tienes alguna consulta, ¡realizala aquí!
+          Si tienes alguna consulta, ¡realízala aquí!
         </p>
       </div>
       <div class="panel-body">
-        <h1>Ask me</h1>
+        {{#autoForm id="insertQuestion" collection="Questions" type="method" meteormethod="addQuestion" template="bootstrap3-inline"}}
+          <div class="col-lg-12 col-md-12">
+            <fieldset>
+              <div class="col-lg-12 col-md-12">
+                {{> afFormGroup name="question" }}
+                <button type="submit" class="btn btn-primary">Guardar</button>
+              </div>
+            </fieldset>
+          </div>
+        {{/autoForm}}
       </div>
     </div>
   </div>
+  {{#each questions}}
+  <div class="col-lg-12 col-md-12">
+
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="col-lg-11 col-md-11">
+          <a href="#" class="btn btn-xs btn-primary up"><span class="glyphicon glyphicon-plus"></span> ¡Subir!</a> <a href="#" class="btn btn-xs btn-success">{{counter}} Votos <span class="glyphicon glyphicon-pushpin"></span></a>    {{question}}
+        </div>
+      </div>
+    </div>
+
+  </div>
+  {{/each}}
 </template>
