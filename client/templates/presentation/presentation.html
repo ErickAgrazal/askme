@@ -1,4 +1,5 @@
 <template name="presentation">
+  <div class="col-lg-8 col-md-12 col-sm-12">
     <div class="panel panel-default">
       <div class="panel-body">
         {{#if equals page 1 }}{{#markdown}}{{> mkd1 }}{{/markdown}} {{/if}}
@@ -16,4 +17,14 @@
         <button class="btn btn-primary next {{#if lastPage }}disabled {{/if}}">Siguiente</button>
       </div>
     </div>
+  </div>
+  <div class="col-lg-4 col-md-12 col-sm-12">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <h1>Estadísticas</h1>
+        <h3>Preguntas: {{counter}}</h3>
+        <h3></h3>
+      </div>
+    </div>
+  </div>
 </template>

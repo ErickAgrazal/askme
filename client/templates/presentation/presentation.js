@@ -1,5 +1,6 @@
 // Default Session Variables
 Session.setDefault("page", 1);
+Session.setDefault("counterQuestions", 0);
 Session.setDefault("firstPage", true);
 Session.setDefault("lastPage", false);
 
@@ -7,11 +8,24 @@ Session.setDefault("lastPage", false);
 var maxPages = 5;
 var minPages = 1;
 
+// Getting the count "Asynchronously"
+setInterval(function () {
+  Meteor.call('getQuestionsCount', updateCounter);
+}, 1000 * 5);
+
+function updateCounter(err, count){
+  if(!err)
+    Session.set("counterQuestions", count);
+}
+
 Template.registerHelper("equals", function (a, b) {
   return (a == b);
 });
 
 Template.presentation.helpers({
+  counter: function(){
+    return Session.get("counterQuestions");
+  },
   page: function(){
     return Session.get("page");
   },

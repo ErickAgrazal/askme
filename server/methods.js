@@ -14,5 +14,11 @@ Meteor.methods({
         $inc: {counter:1}
       }
     );
+  },
+  getQuestionsCount: function(){
+    return Questions.find().count();
+  },
+  getQuestionsVotesCount: function (){
+    // TODO
   }
 });
