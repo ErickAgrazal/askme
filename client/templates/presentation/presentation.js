@@ -5,7 +5,7 @@ Session.setDefault("firstPage", true);
 Session.setDefault("lastPage", false);
 
 // Default Limits
-var maxPages = 5;
+var maxPages = 12;
 var minPages = 1;
 
 // Getting the count "Asynchronously"
