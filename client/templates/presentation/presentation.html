@@ -1,37 +1,41 @@
 <template name="presentation">
-  <div class="col-lg-8 col-md-12 col-sm-12">
-    <div class="panel panel-default">
-      <div class="panel-body">
-        {{#if equals page 1 }}{{#markdown}}{{> mkd1 }}{{/markdown}} {{/if}}
-        {{#if equals page 2 }}{{#markdown}}{{> mkd2 }}{{/markdown}} {{/if}}
-        {{#if equals page 3 }}{{#markdown}}{{> mkd3 }}{{/markdown}} {{/if}}
-        {{#if equals page 4 }}{{#markdown}}{{> mkd4 }}{{/markdown}} {{/if}}
-        {{#if equals page 5 }}{{#markdown}}{{> mkd5 }}{{/markdown}} {{/if}}
-        {{#if equals page 6 }}{{#markdown}}{{> mkd6 }}{{/markdown}} {{/if}}
-        {{#if equals page 7 }}{{#markdown}}{{> mkd7 }}{{/markdown}} {{/if}}
-        {{#if equals page 8 }}{{#markdown}}{{> mkd8 }}{{/markdown}} {{/if}}
-        {{#if equals page 9 }}{{#markdown}}{{> mkd9 }}{{/markdown}} {{/if}}
-        {{#if equals page 10 }}{{#markdown}}{{> mkd10 }}{{/markdown}} {{/if}}
-        {{#if equals page 11 }}{{#markdown}}{{> mkd11 }}{{/markdown}} {{/if}}
-        {{#if equals page 12 }}{{#markdown}}{{> mkd12 }}{{/markdown}} {{/if}}
+  <div class="row">
+    <div class="col-lg-8 col-md-12 col-sm-12">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          {{#if equals page 1 }}{{#markdown}}{{> mkd1 }}{{/markdown}} {{/if}}
+          {{#if equals page 2 }}{{#markdown}}{{> mkd2 }}{{/markdown}} {{/if}}
+          {{#if equals page 3 }}{{#markdown}}{{> mkd3 }}{{/markdown}} {{/if}}
+          {{#if equals page 4 }}{{#markdown}}{{> mkd4 }}{{/markdown}} {{/if}}
+          {{#if equals page 5 }}{{#markdown}}{{> mkd5 }}{{/markdown}} {{/if}}
+          {{#if equals page 6 }}{{#markdown}}{{> mkd6 }}{{/markdown}} {{/if}}
+          {{#if equals page 7 }}{{#markdown}}{{> mkd7 }}{{/markdown}} {{/if}}
+          {{#if equals page 8 }}{{#markdown}}{{> mkd8 }}{{/markdown}} {{/if}}
+          {{#if equals page 9 }}{{#markdown}}{{> mkd9 }}{{/markdown}} {{/if}}
+          {{#if equals page 10 }}{{#markdown}}{{> mkd10 }}{{/markdown}} {{/if}}
+          {{#if equals page 11 }}{{#markdown}}{{> mkd11 }}{{/markdown}} {{/if}}
+          {{#if equals page 12 }}{{#markdown}}{{> mkd12 }}{{/markdown}} {{/if}}
 
-        Página: {{page}}
+          Página: {{page}}
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <button class="btn btn-primary previous {{#if firstPage }}disabled {{/if}}">Anterior</button>
+          <button class="btn btn-primary next {{#if lastPage }}disabled {{/if}}">Siguiente</button>
+        </div>
       </div>
     </div>
-    <div class="panel panel-default">
-      <div class="panel-body">
-        <button class="btn btn-primary previous {{#if firstPage }}disabled {{/if}}">Anterior</button>
-        <button class="btn btn-primary next {{#if lastPage }}disabled {{/if}}">Siguiente</button>
+
+    <div class="col-lg-4 col-md-12 col-sm-12">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <h1>Estadísticas</h1>
+          <h3>Preguntas: {{counter}}</h3>
+          <h3></h3>
+        </div>
       </div>
     </div>
   </div>
-  <div class="col-lg-4 col-md-12 col-sm-12">
-    <div class="panel panel-default">
-      <div class="panel-body">
-        <h1>Estadísticas</h1>
-        <h3>Preguntas: {{counter}}</h3>
-        <h3></h3>
-      </div>
-    </div>
-  </div>
+
 </template>
